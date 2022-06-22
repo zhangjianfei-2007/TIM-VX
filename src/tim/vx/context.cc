@@ -28,6 +28,7 @@
 #include "tim/vx/graph.h"
 #include "tim/vx/compile_option.h"
 #include "vsi_nn_pub.h"
+#include "graph_synap.h"
 
 namespace tim {
 namespace vx {
@@ -47,11 +48,11 @@ std::shared_ptr<Context> Context::Create() {
 }
 
 std::shared_ptr<Graph> ContextImpl::CreateGraph() {
-  return std::make_shared<GraphImpl>(this);
+  return std::make_shared<GraphSynap>(this);
 }
 
 std::shared_ptr<Graph> ContextImpl::CreateGraph(const CompileOption& options) {
-  return std::make_shared<GraphImpl>(this, options);
+  return std::make_shared<GraphSynap>(this, options);
 }
 
 }  // namespace vx

@@ -59,7 +59,7 @@ class NativeExecutable : public IExecutable{
 
 };
 
-class NativeExecutor : public IExecutor, public std::enable_shared_from_this<NativeExecutor>{
+class NativeExecutor : public IExecutor, public std::enable_shared_from_this<NativeExecutor> {
  public:
   NativeExecutor(const std::shared_ptr<IDevice>& device);
   NativeExecutor(const std::shared_ptr<IDevice>& device, const std::shared_ptr<Context>& context);

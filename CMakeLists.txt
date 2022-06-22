@@ -7,12 +7,22 @@ option(TIM_VX_ENABLE_TEST               "Build the unit test"                   
 option(TIM_VX_ENABLE_LAYOUT_INFER       "Enable layout inference support"       ON)
 option(TIM_VX_ENABLE_NBG_PARSER         "Enable NBG parser"                     OFF)
 option(TIM_VX_CODE_COVERAGE             "Run code coverage with gconv(gcc only" OFF)
-option(TIM_VX_USE_EXTERNAL_OVXLIB       "Use external OVXLIB"                   OFF)
+option(TIM_VX_USE_EXTERNAL_OVXLIB       "Use external OVXLIB"                   ON)
 option(TIM_VX_BUILD_EXAMPLES            "Build demos show general usage"        OFF)
 option(TIM_VX_ENABLE_VIPLITE            "Enable lite driver api support"        OFF)
 option(TIM_VX_ENABLE_40BIT              "Enable large memory support"           OFF)
 option(TIM_VX_ENABLE_PLATFORM           "Enable multi devices support"          OFF)
 option(TIM_VX_ENABLE_CUSTOM_OP          "Enable customized op example"          OFF)
+
+set(CMAKE_SYSTEM_NAME Linux)
+set(CMAKE_SYSTEM_PROCESSOR aarch32)
+
+set(TOOLCHAIN_DIR "/home/zhangjf/project/vs680/1.7.3/Synaptics_Git_Ext_Linux/syna-release/toolchain/aarch32/gcc-arm-linux-gnueabi-8.3")
+set(CMAKE_C_COMPILER ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-gcc)
+set(CMAKE_CXX_COMPILER ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-g++)
+set(CMAKE_AR ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-ar)
+set(CMAKE_AS ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-as)
+set(CMAKE_LD ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-ld)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -40,6 +50,8 @@ if(${TIM_VX_ENABLE_CUSTOM_OP})
 endif()
 
 set(CMAKE_C_VISIBILITY_PRESET hidden)
+
+include_directories(/home/zhangjf/project/vs680/tim-vx/TIM-VX/synap/release/include)
 
 if(EXTERNAL_VIV_SDK AND EXISTS ${EXTERNAL_VIV_SDK})
     # this is for internal development purpose

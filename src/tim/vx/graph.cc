@@ -26,6 +26,7 @@
 
 #include "context_private.h"
 #include "graph_private.h"
+#include "graph_synap.h"
 #include "op_impl.h"
 #include "tensor_private.h"
 #include "tim/vx/context.h"
