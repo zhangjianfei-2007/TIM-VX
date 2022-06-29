@@ -1,4 +1,14 @@
-cmake_minimum_required (VERSION 3.14)
+set(CMAKE_SYSTEM_NAME Linux)
+set(CMAKE_SYSTEM_PROCESSOR arm)
+
+#set(TOOLCHAIN_DIR "${project_dir}/1.7.3/Synaptics_Git_Ext_Linux/syna-release/toolchain/aarch32/gcc-arm-linux-gnueabi-8.3")
+set(CMAKE_C_COMPILER ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-gcc)
+set(CMAKE_CXX_COMPILER ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-g++)
+set(CMAKE_AR ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-ar)
+set(CMAKE_AS ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-as)
+set(CMAKE_LD ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-ld)
+
+cmake_minimum_required (VERSION 3.10)
 project(tim-vx LANGUAGES C CXX)
 
 option(BUILD_SHARED_LIBS                "Build using shared libraries"          ON)
@@ -26,7 +36,7 @@ set(CMAKE_LD ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-ld)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra ")
 set(CONFIG "" CACHE STRING "Target Platform")
 
 if(${TIM_VX_CODE_COVERAGE})
