@@ -32,6 +32,7 @@
  * TO ANY PARTY SHALL NOT EXCEED ONE HUNDRED U.S. DOLLARS.
  */
 
+#include <stdbool.h>
 #include <stdint.h>
 #include <stddef.h>
 
@@ -47,7 +48,7 @@ extern "C" {
 /// @param ebg_buffer          Pointer to EBG buffer (will be allocated with standard malloc)
 ///                            (*ebg_buffer set to NULL if conversion failed)
 /// @return                    EBG buffer size (0 if conversion failed)
-size_t nbg_to_ebg(const uint8_t * nbg_buffer, size_t nbg_size, uint8_t ** ebg_buffer);
+size_t nbg_to_ebg(const uint8_t * nbg_buffer, size_t nbg_size, uint8_t ** ebg_buffer, bool profile);
 
 #ifdef  __cplusplus
 }

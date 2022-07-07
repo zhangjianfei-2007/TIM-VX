@@ -60,14 +60,19 @@ public:
         /// Memory block handle, allocator specific.
         uintptr_t handle{};
 
-        /// dma_buf fd
+        /// file descriptor used to pass a reference to other drivers/processes that support
+        /// dmabuf buffers
         int32_t fd{-1};
 
-        /// buffer id
+        /// handle used to attach this memory area to a network as input/output buffer
         uint32_t bid{};
 
-        /// mem_id
+        /// handle used to pass a reference to this memory area to TAs, invalid after bid is
+        /// destroyed
         uint32_t mem_id{};
+
+        /// memory size
+        uint32_t size{};
     };
 
     /// Allocate memory.
@@ -126,12 +131,13 @@ Allocator* cma_allocator();
 
 
 // Specific allocators
+Allocator* synap_allocator();
 Allocator* osal_allocator();
 Allocator* osal_secure_allocator();
-Allocator* dmabuf_allocator();
-Allocator* dmabuf_secure_allocator();
-Allocator* dmabuf_cma_allocator();
-Allocator* dmabuf_cma_secure_allocator();
+Allocator* ion_allocator();
+Allocator* ion_secure_allocator();
+Allocator* ion_cma_allocator();
+Allocator* ion_cma_secure_allocator();
 
 }  // namespace synap
 }  // namespace synaptics

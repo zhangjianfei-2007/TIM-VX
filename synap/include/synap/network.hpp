@@ -70,7 +70,6 @@ public:
     /// @param ebg_meta_data       network's metadata (JSON-formatted text)
     /// @return                    true if success
     bool load_model(const void* ebg_data, size_t ebg_data_size, const char* ebg_meta_data);
-    bool load_model(const void* ebg_data, size_t ebg_data_size, struct NetworkMetadata* meta);
 
 
     /// Run inference.
