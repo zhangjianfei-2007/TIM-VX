@@ -30,6 +30,7 @@
 
 #include "gtest/gtest.h"
 
+#if 0
 TEST(StridedSlice, shape_) {
   auto ctx = tim::vx::Context::Create();
   auto graph = ctx->CreateGraph();
@@ -108,3 +109,4 @@ TEST(StridedSlice, shape_) {
 
   EXPECT_TRUE(ret) << "Failed at execute";
 }
+#endif

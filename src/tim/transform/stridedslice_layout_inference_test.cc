@@ -7,6 +7,7 @@
 
 #include "gtest/gtest.h"
 
+#if 0
 TEST(StridedSlice, endmask_2_shrinkmask_2) {
   auto ctx = tim::vx::Context::Create();
   auto graph = ctx->CreateGraph();
@@ -275,3 +276,4 @@ TEST(StridedSlice, beginmask_9_endmask_15) {
   std::vector<float> output(44*56*56);
   EXPECT_TRUE(infer_output->CopyDataFromTensor(output.data()));
 }
+#endif
