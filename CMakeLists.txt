@@ -2,12 +2,11 @@ set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR arm)
 
 # customized toolchain
-set(TOOLCHAIN_DIR "${PROJECT_BASEDIR}/syna-release/toolchain/aarch32/gcc-arm-linux-gnueabi-8.3")
-set(CMAKE_C_COMPILER ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-gcc)
-set(CMAKE_CXX_COMPILER ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-g++)
-set(CMAKE_AR ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-ar)
-set(CMAKE_AS ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-as)
-set(CMAKE_LD ${TOOLCHAIN_DIR}/bin/arm-linux-gnueabihf-ld)
+set(CMAKE_C_COMPILER arm-linux-gnueabihf-gcc)
+set(CMAKE_CXX_COMPILER arm-linux-gnueabihf-g++)
+set(CMAKE_AR arm-linux-gnueabihf-ar)
+set(CMAKE_AS arm-linux-gnueabihf-as)
+set(CMAKE_LD arm-linux-gnueabihf-ld)
 
 cmake_minimum_required (VERSION 3.10)
 project(tim-vx LANGUAGES C CXX)
