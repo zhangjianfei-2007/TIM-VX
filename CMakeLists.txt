@@ -51,7 +51,7 @@ endif()
 
 set(CMAKE_C_VISIBILITY_PRESET hidden)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/synap/release/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/synap/include)
 
 if(EXTERNAL_VIV_SDK AND EXISTS ${EXTERNAL_VIV_SDK})
     # this is for internal development purpose
